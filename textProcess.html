@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="loadingOverlay.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>890 Banking Cstomer Onboarding OCR</title>
+	<style type="text/css">
+		/*progress bar 2*/
+		.container {
+    		width: 100%;
+    		padding-bottom: 30px;
+		}
+		.proBar {
+			counter-reset: step;
+		}
+		.proBar li {
+    		list-style-type: none;
+    		padding-left: 8%;
+    		margin-bottom: 30px;
+    		float: left;
+    		width: 9%;
+    		position: relative;
+    		text-align: center;
+		}
+		.proBar li:before {
+			content: counter(step);
+			counter-increment: step;
+			width: 40px;
+			height:40px;
+			line-height: 40px;
+			border:4px solid #ddd;
+			display: block;
+			text-align: center;
+			margin: 0 auto 10px auto;
+			border-radius: 50%;
+			background-color: white;
+		}
+		.proBar li:after {
+			content:'';
+			position: absolute;
+			width:100%;
+			height:4px;
+			background-color: #ddd;
+			top:30%;
+			left:-30%;
+			z-index: -1;
+		}
+		.proBar li:first-child:after {
+			content:none;
+		}
+		.proBar li.active {
+			color: #FF4F7C;
+		}
+		.proBar li.active:before {
+			border-color: #FF4F7C;
+		}
+		.proBar li.active + li:after {
+			background-color: #FF4F7C;
+		}
+
+		body {
+			  margin: 0;
+			  font-family: sans-serif;
+			  background-color: white;
+			}
+			/* Three image containers (use 25% for four, and 50% for two, etc) */
+			.column {
+			  float: left;
+			
+			  
+			  /*border-right-style: groove;*/
+			  padding-top: 5%;
+			  padding-left: 15%;
+			
+
+			}
+			#last-column{
+				float: left;
+				width: 26%;
+				padding-left: 12%;
+				padding-top: 8%;
+				border-right-style: none;
+			}
+			/* Clear floats after image containers */
+			.row::after {
+			  content: "";
+			  clear: both;
+			  display: table;
+			}
+			.btn {
+				border: none
+			}
+			/*loader css*/
+			 .loader {
+			 	border: 30px solid #f3f3f3;
+				border-radius: 50%;
+				border-top: 30px solid #FF4F7C;
+			
+				border-bottom: 30px solid #FF4F7C;
+
+				width: 150px;
+				height: 150px;
+				-webkit-animation: spin 2s linear infinite;
+				animation: spin 2s linear infinite;
+
+			 }
+
+			@keyframes spin {
+			    0% { transform: rotate(0deg); }
+			    100% { transform: rotate(360deg); }
+			}
+
+			.hide-loader{
+			display:none;
+			}
+	</style>
+</head>
+<body>
+<div class="header">
+<!-- 	<div class="topnav">
+	  <a href="#home">CDP Home</a>
+	  <a href="#news">News</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	</div> -->
+	<img src="source/890.PNG" width="92%">
+	<img src="source/logo.jpg" width="7.5%">
+</div>
+<div class="container">
+	<ul class="proBar">
+		<li class="active">Select Document</li>
+		<li class="active">Upload Document</li>
+		<li class="active">OCR/ICR Outcome</li>
+		<li>Process text</li>
+		<li>Return Result</li>
+	</ul>
+</div>
+
+<div class="row">
+	<div class="column" style="padding-left: 8%"">
+		<br>
+		<br>
+		<br>
+		<h1>File selected: </h1>
+		<h3 id="duplicater0">
+		<script type="text/javascript">
+			document.getElementById("duplicater0").innerHTML = localStorage.getItem("duplicater0content");
+		</script>
+		</h3>
+		<img id="localimg" src="source/BalanceSheet2.jpg" width="500">
+	</div>
+	<div class="column" id="second-column" style="padding-left: 1%; padding-top:25%">
+		
+		<label for="cbutton">
+	    	<img src="source/obutton.png" width="60%" style="width:100%;"/>
+	    </label>
+			<input type="button" id="cbutton" style="display:none;">
+			<script type="text/javascript">
+				var el = document.getElementById("cbutton");
+				el.addEventListener("click", function myFunction(){
+					var x = document.getElementById("loader");
+					x.style.display = "none";
+				});
+				// function myFunction(){
+				// 	function first(){
+				// 		var x = document.getElementById("last-column");
+				// 		x.style.display = "none";
+				// 	}
+				
+				// document.getElementById('cbutton').onclick = duplicate;
+				el.addEventListener("click", function duplicate(){
+					var i = 0;
+					var original = document.getElementById('duplicater' + i);
+				    var clone = original.cloneNode(true); // "deep" clone
+				    // clone.id = "duplicetor" + ++i; // there can only be one element with an ID
+				    clone.onclick = duplicate; // event handlers are not cloned
+				    var place = document.getElementById("after_loader")
+				    place.appendChild(clone);
+				});
+
+				// el.addEventListener("click", function show_img(){
+				// 	var img = document.createElement("img");
+				// 	var img2 = document.createElement("img");
+				// 	img.src = "source/balance.PNG";
+				// 	img2.src = "source/refLetter.png";
+				//     var place2 = document.getElementById("after-submit");
+				//     place2.appendChild(img);
+				//     var place3 = document.getElementById("after-submit2");
+				//     place3.appendChild(img2);
+				// });
+					el.addEventListener("click", function ocrimg(){
+					document.getElementById("ocrimg").src = "source/BalanceSheet2box.jpg";
+				});
+
+			</script>
+			<script type="text/javascript">
+				var duplicater0content = document.getElementById('duplicater0').innerHTML;
+				localStorage.setItem("duplicater0content", duplicater0content);
+
+			</script>
+
+	</div>
+	<div class="column" id="last-column" style="padding-left: 3%">
+		<div id="loader" style="padding-top: 45%">
+			<div class="loader"></div>
+			<h3 id="loading" style="color: #FF4F7C; padding-left: 12%;">Loading...</h3>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function(){
+				$('#loader').addClass('hide-loader');
+			}, 10000);
+			setTimeout(function(){
+				$('#loading').addClass('hide-loader');
+			}, 100000);
+		</script>
+		<div id="after_loader" style="padding-top: 10%">
+
+		</div>
+		<img src="" width="600" id="ocrimg">
+	</div>
+</div>
+	<div style="text-align: center">
+		<label for="subBtn">
+		    <img src="source/subutton.png"  style="padding-top: 1%; padding-right: 12%"/>
+		</label>
+		<input onclick="window.location='outcome.html'" type="submit" id="subBtn" style="display: none">
+	</div>
+	<div id="after-submit" style="padding-left: 5%">
+
+	</div>
+	<div id="after-submit2" style="padding-left:5%; width: 50%">
+	</div>
+
+</body>
+</html>

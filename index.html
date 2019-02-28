@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>890 Banking Cstomer Onboarding</title>
+	<style type="text/css">
+	/*progress bar 1*/
+		/*.progress {
+			width: 2000px;
+			margin: 20px auto;
+			text-align: center;
+			}
+		.progress .circle,
+		.progress .bar {
+		display: inline-block;
+		background: #fff;
+		width: 40px; height: 40px;
+		border-radius: 40px;
+		border: 1px solid #d5d5da;
+		}
+		.progress .bar {
+		position: relative;
+		width: 10%;
+		height: 6px;
+		top: -33px;
+		margin-left: -5px;
+		margin-right: -5px;
+		border-left: none;
+		border-right: none;
+		border-radius: 0;
+		}
+		.progress .circle .label {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		line-height: 32px;
+		border-radius: 32px;
+		margin-top: 3px;
+		color: #b5b5ba;
+		font-size: 17px;
+		}
+		.progress .circle .title {
+		color: #b5b5ba;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 30px;
+		margin-left: -5px;
+		}
+
+		/* Done / Active */
+		/*.progress .bar.done,
+		.progress .circle.done {
+		background: #00CF8B;
+		}
+		.progress .bar.active {
+		background: linear-gradient(to right, #EEE 40%, #FFF 60%);
+		}
+		.progress .circle.done .label {
+		color: #FFF;
+		background: #81CE97;
+		box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+		}
+		.progress .circle.done .title {
+		color: #444;
+		}
+		.progress .circle.active .label {
+		color: #FFF;
+		background: #FF4F7C;
+		box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+		}
+		.progress .circle.active .title {
+		color: #FF4F7C;
+		}*/
+
+		/*prgress bar 3*/
+		/*.progress-bar {
+			background-color:#2A80FF ;
+		}
+		.progress-bar.step-0 {
+			width: 0%;
+		}
+		.progress-bar.step-1 {
+			width: 20%;
+		}
+		.progress-bar.step-2 {
+			width: 40%;
+		}
+		.progress-bar.step-3 {
+			width: 60%;
+		}
+		.progress-bar.step-4 {
+			width: 80%;
+		}
+		.progress-bar.step-5 {
+			width: 100%;
+		}*/
+
+		/*progress bar 2*/
+		.container {
+    		width: 100%;
+    		padding-bottom: 30px;
+		}
+		.proBar {
+			counter-reset: step;
+		}
+		.proBar li {
+    		list-style-type: none;
+    		padding-left: 8%;
+    		margin-bottom: 30px;
+    		float: left;
+    		width: 9%;
+    		position: relative;
+    		text-align: center;
+		}
+		.proBar li:before {
+			content: counter(step);
+			counter-increment: step;
+			width: 40px;
+			height:40px;
+			line-height: 40px;
+			border:4px solid #ddd;
+			display: block;
+			text-align: center;
+			margin: 0 auto 10px auto;
+			border-radius: 50%;
+			background-color: white;
+		}
+		.proBar li:after {
+			content:'';
+			position: absolute;
+			width:100%;
+			height:4px;
+			background-color: #ddd;
+			top:30%;
+			left:-30%;
+			z-index: -1;
+		}
+		.proBar li:first-child:after {
+			content:none;
+		}
+		.proBar li.active {
+			color: #FF4F7C;
+		}
+		.proBar li.active:before {
+			border-color: #FF4F7C;
+		}
+		.proBar li.active + li:after {
+			background-color: #FF4F7C;
+		}
+		/* Add a black background color to the top navigation */
+
+			body {
+			  margin: 0;
+			  font-family: sans-serif;
+			  background-color: white;
+			}
+			/* Three image containers (use 25% for four, and 50% for two, etc) */
+			.column {
+			  float: left;
+			  width: 26%;
+			  border-right-width: 7px;
+			  border-right-color: #696969;
+			  border-right-style: double;
+			  /*border-right-style: groove;*/
+			  padding-left: 1%;
+			  padding-right: 1%;
+
+			}
+			#last-column{
+				float: left;
+				width: 26%;
+				padding-left: 1%;
+				border-right-style: none;
+			}
+			/* Clear floats after image containers */
+			.row::after {
+			  content: "";
+			  clear: both;
+			  display: table;
+			}
+			.btn {
+				border: none
+			}
+
+			/*.topnav {
+			  overflow: hidden;
+			  background-color: #2B979E;
+			  font-family: sans-serif;
+			}
+
+			.topnav a {
+			  float: left;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  font-size: 65px;
+			  font-f
+			}
+
+			.topnav a:hover {
+			  background-color: #00CF8B;
+			  color: black;
+			}*/
+</style>
+</head>
+<body>
+<div class="header">
+<!-- 	<div class="topnav">
+	  <a href="#home">CDP Home</a>
+	  <a href="#news">News</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	</div> -->
+	<img src="source/890.PNG" width="92%">
+	<img src="source/logo.jpg" width="7.5%">
+</div>
+<div class="container">
+	<ul class="proBar">
+		<li class="active">Select Document</li>
+		<li>Upload Document</li>
+		<li>OCR/ICR Outcome</li>
+		<li>Process text</li>
+		<li>Return Result</li>
+	</ul>
+</div>
+
+<div style="text-align: center; margin-left: 14%">
+	<!-- <form action="file_convert.html"> -->
+	<form action="ocr.php" method="POST" enctype="multipart/form-data">
+		<h2 style="color:Black; padding-right: 20%; padding-top: 8%;">Please Select the Document to Process:</h2>
+		<div class="row">
+	  <div class="column">
+	    <img src="source/contract2.jpg" style="width:95%;padding-top:20%; filter:brightness(92%); ">
+	    <!-- button for select file -->
+	    <label for="myFile">
+	    	<img src="source/sbutton.png" width="60%" style="padding-top: 13%"/>
+	    </label>
+			<input type="file" id="myFile" multiple size="50" onchange="myFunction()" name="files[]" accept="image/*" style="display:none;">
+	  </div>
+	  <div class="column" style="border-right: 1px solid black;"></div>
+	  
+	  <div class="column">
+	    <img src="source/W2.jpg" style="width:95%; padding-top: 20%; filter:brightness(92%);">
+	    <label for="myFile">
+	    	<img src="source/sbutton.png" width="60%" style="padding-top: 13%"/>
+	    </label>
+			<input type="file" id="myFile" multiple size="50" onchange="myFunction()" style="display:none;">
+	  </div>
+	  <div class="column" id="last-column">
+	    <img src="source/balancesheet.jpg"  style="width:100%; filter:brightness(95%); padding-top: 20%">
+			 <label for="myFile">
+	    		<img src="source/sbutton.png" width="60%" style="padding-top: 13%"/>
+	    	</label>
+			<input type="file" id="myFile" multiple size="50" onchange="myFunction()" style="display:none;">
+			<script>
+			function myFunction(){
+			    var x = document.getElementById("myFile");
+			    var txt = "";
+			    if ('files' in x) {
+			        if (x.files.length == 0) {
+			            txt = "Select one or more files.";
+			        } else {
+			            for (var i = 0; i < x.files.length; i++) {
+			                // txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+			                var file = x.files[i];
+			                if ('name' in file) {
+			                    txt += file.name + "<br>";
+			                }
+			            }
+			        }
+			    } 
+			    else {
+			        if (x.value == "") {
+			            txt += "Select one or more files.";
+			        } else {
+			            txt += "The files property is not supported by your browser!";
+			            txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+			        }
+			    }
+			    document.getElementById("demo").innerHTML = txt;
+			}
+				</script>
+	  </div>
+	</div>
+<!-- 	<button type="submit">
+		<label for="files">
+	    	<img src="source/subutton.png" width="60%" style="padding-top: 9%"/>
+	    </label>
+	</button> -->
+</div>
+<div style="text-align: left; text-align: center">
+<!-- <div class="dropdown">
+	<form action="upload.php" method="POST" enctype="multipart/form-data">
+		<select name="documentPop" class="dropbtn progress-next"" id="dropList">
+			<option value="docType">Document Type</option>
+			<option value="wForm">W-Form</option>
+			<option value="dLicense" id="dlicense">Driver License</option>
+			<option value="bill" id="bill">Bill and Balanced Sheet</option>
+			<option value="refLetter" id="refLetter">Reference Letter</option>
+			<option value="contract"id>Contract Agreement</option>
+		</select> -->
+		<!-- <div class="dropdown"> -->
+			<!-- <label for="files" class="dropbtn">Upload the File</label> -->
+			<!-- <input type="file" id="myFile" multiple size="50" onchange="myFunction()"> -->
+			<div id="demo" style="font-family: sans-serif; font-size: 18px; font-weight: bold"></div>
+			<script>
+			function myFunction(){
+			    var x = document.getElementById("myFile");
+			    var txt = "";
+			    if ('files' in x) {
+			        if (x.files.length == 0) {
+			            txt = "Select one or more files.";
+			        } else {
+			            for (var i = 0; i < x.files.length; i++) {
+			                // txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+			                var file = x.files[i];
+			                if ('name' in file) {
+			                    txt += file.name + "<br>";
+			                }
+			            }
+			        }
+			    } 
+			    else {
+			        if (x.value == "") {
+			            txt += "Select one or more files.";
+			        } else {
+			            txt += "The files property is not supported by your browser!";
+			            txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+			        }
+			    }
+			    document.getElementById("demo").innerHTML = txt;
+			}
+				</script>
+			<!-- <input type="file" id="files" name="file" class="inputfile" data-multiple-caption="{count} files selected" multiple > -->
+		<!-- </div> -->
+		<!-- <input type="button" onclick="ocr()" class="dropbtn" name="next">OCR Process</button> -->
+		<!-- <input type="button" value="OCR Process" onclick="ocr()" class="dropbtn"/>  -->
+		<script type = "text/javascript">
+	        function ocr()
+	        {
+	        	var x = document.getElementById("dropList").options.selectedIndex 
+	        	if(x == 0){
+	        		document.getElementById("img").src = "source/smiley.jpg";
+	        	}
+	        	if(x == 1){
+	        		document.getElementById("img").src = "txt/w9ocr.png";
+	        	} 
+	        	if (x == 2) {
+	        		document.getElementById("img").src = "txt/dlicense.png";
+	        	} 
+	        	if (x == 3) {
+	        		document.getElementById("img").src = "txt/balance.png";
+	        	} 
+	        	if (x == 4) {
+	        		document.getElementById("img").src = "txt/refLetter.png";
+	        	} 
+	        	if (x == 5) {
+	        		document.getElementById("img").src = "txt/contract.png";
+	        	} 	            
+	        }
+    	</script>
+    
+	    	<label for="subBtn">
+		    	<img src="source/subutton.png"  style="padding-top: 1%; width:14%; text-align: center"/>
+		    </label>
+			<input type="submit" id="subBtn" style="display: none">
+			<!-- <input type="submit" class="dropbtn" name="submit"> -->
+	
+	</div>
+	</form>
+	<!-- <div style="text-align: center">
+		<img id="fileimage" style="" height="600"  >
+		<img id="img" style="" height="600"   src=""/>
+	</div>
+	<input type="button" onclick="location.href='file_convert.html';" value="Process" /> -->
+</div>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</html>
+

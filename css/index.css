@@ -1,0 +1,131 @@
+/*body {
+    background-color: #FFFFFF;
+    font-family: sans-serif;
+    font-color: white;
+}*/
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: white;
+}
+.header {
+    background-image: url(source/890.PNG);
+    background-color: #78B7DC;
+
+}
+.Onboarding {
+    color:white;
+}
+
+/*.icon-bar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}*/
+
+/*.active {
+    background-color: #4CAF50;
+}
+*/
+/* Dropdown Button */
+.dropbtn {
+	/*background-color: #00CF8B;*/
+    background-color: #2B979E;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    /*background-color:#2B979E;*/
+    background-color: #00CF8B;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  	font-weight: 700;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #2B979E}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* upload file */
+.fileUpload {
+    position: relative;
+    display: inline-block;
+  	font-weight: 700;
+  	background-color: #13ce66;
+  	padding: 16px;
+    font-size: 16px;
+    color: white;
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+@font-face {
+    font-family: "myfont";
+    src: url("css/FaktSoftPro-Normal.woff") format('woff');
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("css/FaktProSoft-Medium.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("css/FaktProSoft-Blond.woff") format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+

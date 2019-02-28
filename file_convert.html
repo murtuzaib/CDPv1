@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>file conversion</title>
+	<style>
+	/*progress bar 2*/
+		.container {
+    		width: 100%;
+    		padding-bottom: 30px;
+		}
+		.proBar {
+			counter-reset: step;
+		}
+		.proBar li {
+    		list-style-type: none;
+    		padding-left: 8%;
+    		margin-bottom: 30px;
+    		float: left;
+    		width: 9%;
+    		position: relative;
+    		text-align: center;
+		}
+		.proBar li:before {
+			content: counter(step);
+			counter-increment: step;
+			width: 40px;
+			height:40px;
+			line-height: 40px;
+			border:4px solid #ddd;
+			display: block;
+			text-align: center;
+			margin: 0 auto 10px auto;
+			border-radius: 50%;
+			background-color: white;
+		}
+		.proBar li:after {
+			content:'';
+			position: absolute;
+			width:100%;
+			height:4px;
+			background-color: #ddd;
+			top:30%;
+			left:-30%;
+			z-index: -1;
+		}
+		.proBar li:first-child:after {
+			content:none;
+		}
+		.proBar li.active {
+			color: #FF4F7C;
+		}
+		.proBar li.active:before {
+			border-color: #FF4F7C;
+		}
+		.proBar li.active + li:after {
+			background-color: #FF4F7C;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+<!-- 	<div class="topnav">
+	  <a href="#home">CDP Home</a>
+	  <a href="#news">News</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	</div> -->
+	<img src="source/890.PNG" width="92%">
+	<img src="source/logo.jpg" width="7.5%">
+</div>
+<div class="container">
+	<ul class="proBar">
+		<li class="active">Select Document</li>
+		<li class="active">Upload Document</li>
+		<li>OCR/ICR Outcome</li>
+		<li>Process text</li>
+		<li>Retrun Result</li>
+	</ul>
+</div>
+</body>
+</html>
